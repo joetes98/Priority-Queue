@@ -1,11 +1,11 @@
-#ifndef BINARYHEAP_H
-#define BINARYHEAP_H
+#ifndef PRIORITYQUEUE_H
+#define PRIORITYQUEUE_H
 
 using namespace std;
 #include <vector>
 
 template <class Comparable>
-class BinaryHeap {
+class PriorityQueue {
     private:
         int theSize; // number of elements
         vector<Comparable> array;
@@ -13,12 +13,13 @@ class BinaryHeap {
         void percolateDown(int hole);
 
     public:
-        BinaryHeap(int capacity = 100);
+        PriorityQueue(int capacity = 100);
+        int getSize();
+        void displayQueue();
         bool isEmpty() const;
-
         void insert(const Comparable& x);
         Comparable deleteMin();
         void makeEmpty();
 };
-#include "BinaryHeap.tpp"
-#endif // BINARY_H
+#include "PriorityQueue.tpp"
+#endif // PRIORITYQUEUE_H
